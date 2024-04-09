@@ -31,5 +31,7 @@ public class App {
 
         //show receipt  
         Reciept.showReceipt(client, plan);
+
+        System.out.println("Testing");
     }
 }
