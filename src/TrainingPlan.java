@@ -1,12 +1,20 @@
 import java.util.Scanner;
 
 public class TrainingPlan {
-
     private int coachingHours;
-    private static int chosenPlan;
+    private int chosenPlan;
 
-    Scanner scanner = new Scanner(System.in);
+    public Scanner scanner = new Scanner(System.in);
     String [] trainingPlans = {"Beginner","Intermediate","Elite",};
+
+    
+    public String[] getTrainingPlans() {
+        return trainingPlans;
+    }
+
+    public void setTrainingPlans(String[] trainingPlans) {
+        this.trainingPlans = trainingPlans;
+    }
 
     public int getChosenPlan() {
         return chosenPlan;
@@ -33,6 +41,25 @@ public class TrainingPlan {
 
     void takePersonalCoach(){
         System.out.println("Would you like to take personal coach $9 per hour 0 to 20 hours");
-        coachingHours = scanner.nextInt();
+        coachingHours = getValidIndex(5);
+    }
+
+    public int getValidIndex(int maxLength) {
+        int index;
+        while (true) {
+            System.out.print("Enter index (not more than " + maxLength + "): ");
+            if (scanner.hasNextInt()) {
+                index = scanner.nextInt();
+                if (index >= 1 && index <= maxLength) {
+                    break; // Exit the loop if the index is valid
+                } else {
+                    System.out.println("Invalid index. Please enter a valid index.");
+                }
+            } else {
+                System.out.println("Invalid input. Please enter an integer.");
+                scanner.next(); // Consume the invalid input
+            }
+        }
+        return index;
     }
 }

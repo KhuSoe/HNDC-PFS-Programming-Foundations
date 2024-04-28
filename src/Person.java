@@ -1,4 +1,4 @@
-public class Client {
+public class Person extends Tournament{
     private String name;
     private int age;
     private int weight;

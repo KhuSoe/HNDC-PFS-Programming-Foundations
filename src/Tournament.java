@@ -38,10 +38,10 @@ public class Tournament extends TrainingPlan{
                 for(int i = 0; i < weightCategories.length; i ++){
                     System.out.println((i+1) + " " + weightCategories[i].toString());
                 }
-                chosenWeightClass = scanner.nextInt();
+                chosenWeightClass = getValidIndex(weightCategories.length);
 
-                System.out.println("How many times would you like to compete $22 per competition");
-                noOfCompetition = scanner.nextInt();
+                System.out.println("How many times would you like to compete $22 per competition not more than 2");
+                noOfCompetition = getValidIndex(2);
             }
         }
     }
