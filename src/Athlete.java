@@ -25,39 +25,5 @@ public class Athlete extends Person{
         //ask for personal coach
         takePersonalCoach();
     }
-
-    public int getIntInput() {
-        int input;
-
-        while (true) {
-            if (scanner.hasNextInt()) {
-                input = scanner.nextInt();
-                break;
-            } else {
-                System.out.println("Invalid input. Please enter an integer.");
-                scanner.next(); 
-            }
-        }
-        return input;
-    }
-
-    public int getValidIndex(int maxLength) {
-        int index;
-        while (true) {
-            System.out.print("Enter index (not more than " + maxLength + "): ");
-            if (scanner.hasNextInt()) {
-                index = scanner.nextInt();
-                if (index >= 1 && index <= maxLength) {
-                    break; // Exit the loop if the index is valid
-                } else {
-                    System.out.println("Invalid index. Please enter a valid index.");
-                }
-            } else {
-                System.out.println("Invalid input. Please enter an integer.");
-                scanner.next(); // Consume the invalid input
-            }
-        }
-        return index;
-    }
 } 
 

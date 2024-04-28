@@ -62,4 +62,19 @@ public class TrainingPlan {
         }
         return index;
     }
+
+    public int getIntInput() {
+        int input;
+
+        while (true) {
+            if (scanner.hasNextInt()) {
+                input = scanner.nextInt();
+                break;
+            } else {
+                System.out.println("Invalid input. Please enter an integer.");
+                scanner.next(); 
+            }
+        }
+        return input;
+    }
 }

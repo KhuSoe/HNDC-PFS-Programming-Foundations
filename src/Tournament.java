@@ -40,7 +40,7 @@ public class Tournament extends TrainingPlan{
                 }
                 chosenWeightClass = getValidIndex(weightCategories.length);
 
-                System.out.println("How many times would you like to compete $22 per competition not more than 2");
+                System.out.println("How many times would you like to compete $22 per competition");
                 noOfCompetition = getValidIndex(2);
             }
         }
