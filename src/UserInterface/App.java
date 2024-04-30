@@ -1,3 +1,8 @@
+package UserInterface;
+
+import AtheleteInformation.Athlete;
+import CostCalculation.Receipt;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,9 +15,8 @@ public class App {
             System.out.println("You have no client please add client");
             addUser();
         }else {
-            for (Athlete athlete: athletes) {
-                Reciept.showReceipt(athlete);
-            }
+                Receipt receipt = new Receipt();
+                receipt.showReceipt(athletes);
         }
     }
     private static void addUser() {

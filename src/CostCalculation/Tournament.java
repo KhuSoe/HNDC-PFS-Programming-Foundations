@@ -1,11 +1,11 @@
-import java.util.Scanner;
+package CostCalculation;
 
-public class Tournament extends TrainingPlan{
+public class Tournament extends TrainingPlan {
 
     private int noOfCompetition = 0;
     private int chosenWeightClass;
     
-    String [] weightCategories = {"HeavyWeight","LightHeavyWeight","MiddleWeight","LightMiddleWeight","LightWeight","FlyWeight"};
+    public String [] weightCategories = {"HeavyWeight - 66 kg","LightHeavyWeight - 73 kg","MiddleWeight - 81 kg","LightMiddleWeight - 90 kg","LightWeight - 100kg","FlyWeight - over 100kg"};
 
     public int getNoOfCompetition() {
         return noOfCompetition;
@@ -30,13 +30,19 @@ public class Tournament extends TrainingPlan{
         return false;
     }
 
-    void askTournement(){
+    public void askTournament() {
         if (approveTournament()) {
             System.out.println("You are eligible for weight competition, would you like to compete y/n");
             if (scanner.next().equals("y")) {
                 System.out.println("Choose your weight class");
-                for(int i = 0; i < weightCategories.length; i ++){
-                    System.out.println((i+1) + " " + weightCategories[i].toString());
+
+                // Print table header in yellow
+                System.out.print("\033[0;43m"); // ANSI escape code for yellow background
+                System.out.printf("%-10s %-20s\n", "Option", "Weight Class");
+                System.out.print("\033[0m"); // Reset color
+
+                for (int i = 0; i < weightCategories.length; i++) {
+                    System.out.printf("%-10d %-20s\n", (i + 1), weightCategories[i].toString());
                 }
                 chosenWeightClass = getValidIndex(weightCategories.length);
 
@@ -45,4 +51,5 @@ public class Tournament extends TrainingPlan{
             }
         }
     }
+
 }
